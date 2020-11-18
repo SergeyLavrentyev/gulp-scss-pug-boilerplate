@@ -8,22 +8,22 @@ const fonts = require('./fonts');
 const config = require('../config');
 
 const reload = (done) => {
-  browserSync.stream()
+  browserSync.reload()
   done();
 };
 
 const stream = () => {
   watch(config.src.pug.watch, series(html, reload)),
-  watch(config.src.scss.watch, series(css)),
-  watch(config.src.js, series(script)),
-  watch(config.src.images, series(images)),
-  watch(config.src.fonts, series(fonts))
+  watch(config.src.scss.watch, series(css, reload)),
+  watch(config.src.js, series(script, reload)),
+  watch(config.src.images, series(images, reload)),
+  watch(config.src.fonts, series(fonts, reload))
 };
 
 const server = () => {
   browserSync.init({
     server: {
-      baseDir: './build'
+      baseDir: config.baseDir
     }
   });
   browserSync.reload(),
