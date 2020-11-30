@@ -10,7 +10,6 @@ const lintspaces = () => {
       `${config.src.pug.watch}`,
       `${config.src.scss.watch}`,
       `${config.src.js}`,
-      `${config.src.images}`,
       `${config.src.fonts}`
     ])
     .pipe(lintSpaces({ editorconfig: '.editorconfig' }))
