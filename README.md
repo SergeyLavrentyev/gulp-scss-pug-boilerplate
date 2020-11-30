@@ -1,11 +1,3 @@
-# Gulp project for SCSS & PUG
+# Privet Palmiro Project
 
-## Working with Gulp
-
-### Build
-
-Use the command `gulp build`
-
-### Dev
-
-Use the command `gulp start`
+Blog about everything

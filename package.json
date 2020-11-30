@@ -1,10 +1,11 @@
 {
-  "name": "t-test",
+  "name": "privet_palmiro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "linterspaces": "gulp lintspaces",
+    "test": "npm run linterspaces"
   },
   "keywords": [],
   "author": "",
@@ -21,9 +22,11 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-html-prettify": "^0.0.1",
     "gulp-imagemin": "^7.1.0",
+    "gulp-lintspaces": "^1.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-w3c-html-validator": "^2.0.1",
     "husky": "^4.3.0",
@@ -31,10 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\""
+      "pre-push": "npm test"
     }
   }
 }
